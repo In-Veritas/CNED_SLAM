@@ -1,0 +1,24 @@
+C:\Users\Gabriel\source\repos\Devoir SLAM\Devoir SLAM\bin\Debug\Devoir SLAM.exe.config
+C:\Users\Gabriel\source\repos\Devoir SLAM\Devoir SLAM\bin\Debug\Devoir SLAM.exe
+C:\Users\Gabriel\source\repos\Devoir SLAM\Devoir SLAM\bin\Debug\Devoir SLAM.pdb
+C:\Users\Gabriel\source\repos\Devoir SLAM\Devoir SLAM\bin\Debug\MySql.Data.dll
+C:\Users\Gabriel\source\repos\Devoir SLAM\Devoir SLAM\bin\Debug\Google.Protobuf.dll
+C:\Users\Gabriel\source\repos\Devoir SLAM\Devoir SLAM\bin\Debug\Zstandard.Net.dll
+C:\Users\Gabriel\source\repos\Devoir SLAM\Devoir SLAM\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\Gabriel\source\repos\Devoir SLAM\Devoir SLAM\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Gabriel\source\repos\Devoir SLAM\Devoir SLAM\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\Gabriel\source\repos\Devoir SLAM\Devoir SLAM\bin\Debug\System.Memory.dll
+C:\Users\Gabriel\source\repos\Devoir SLAM\Devoir SLAM\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Gabriel\source\repos\Devoir SLAM\Devoir SLAM\bin\Debug\System.Buffers.dll
+C:\Users\Gabriel\source\repos\Devoir SLAM\Devoir SLAM\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\Gabriel\source\repos\Devoir SLAM\Devoir SLAM\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\Gabriel\source\repos\Devoir SLAM\Devoir SLAM\bin\Debug\MySql.Data.xml
+C:\Users\Gabriel\source\repos\Devoir SLAM\Devoir SLAM\obj\Debug\Devoir SLAM.csprojAssemblyReference.cache
+C:\Users\Gabriel\source\repos\Devoir SLAM\Devoir SLAM\obj\Debug\Devoir SLAM.exe.config
+C:\Users\Gabriel\source\repos\Devoir SLAM\Devoir SLAM\obj\Debug\Devoir_SLAM.View.resources
+C:\Users\Gabriel\source\repos\Devoir SLAM\Devoir SLAM\obj\Debug\Devoir_SLAM.Properties.Resources.resources
+C:\Users\Gabriel\source\repos\Devoir SLAM\Devoir SLAM\obj\Debug\Devoir SLAM.csproj.GenerateResource.cache
+C:\Users\Gabriel\source\repos\Devoir SLAM\Devoir SLAM\obj\Debug\Devoir SLAM.csproj.CoreCompileInputs.cache
+C:\Users\Gabriel\source\repos\Devoir SLAM\Devoir SLAM\obj\Debug\Devoir SLAM.csproj.CopyComplete
+C:\Users\Gabriel\source\repos\Devoir SLAM\Devoir SLAM\obj\Debug\Devoir SLAM.exe
+C:\Users\Gabriel\source\repos\Devoir SLAM\Devoir SLAM\obj\Debug\Devoir SLAM.pdb

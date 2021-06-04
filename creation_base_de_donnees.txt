@@ -1,0 +1,77 @@
+
+CREATE DATABASE mediatek86;
+use mediatek86;
+
+CREATE TABLE responsable (
+    login VARCHAR(64),
+    pwd VARCHAR(64),
+    PRIMARY KEY (login)
+);
+
+CREATE TABLE personnel(
+    idpersonnel BIGINT,
+    nom VARCHAR(20),
+    prenom VARCHAR(20),
+    tel VARCHAR(30),
+    mail VARCHAR(100),
+    absences DATETIME, 
+    PRIMARY KEY (idpersonnel)
+);
+
+ALTER TABLE personnel
+ADD FOREIGN KEY (absences) REFERENCES absence(datedebut);
+
+CREATE TABLE service(
+    idservice INT AUTO_INCREMENT,
+    salaries_responsables BIGINT,
+    nom VARCHAR(100),
+    PRIMARY KEY (idservice),
+    FOREIGN KEY (salaries_responsables) REFERENCES personnel(idpersonnel)
+);
+
+
+
+CREATE TABLE absence(
+    datedebut DATETIME,
+    datefin DATETIME,
+    personne_absente BIGINT,
+    PRIMARY KEY (datedebut),
+    FOREIGN KEY (personne_absente) REFERENCES personnel(idpersonnel)
+);
+
+DROP TABLE MOTIF;
+
+CREATE TABLE motif (
+    idmotif INT AUTO_INCREMENT,
+    date_absence DATETIME,
+    libelle VARCHAR(100),
+    PRIMARY KEY(idmotif),
+    FOREIGN KEY (date_absence) REFERENCES absence(datedebut)
+);
+
+SELECT * FROM motif;
+
+INSERT INTO responsable VALUES("admin", SHA2("le pwd", 256));
+INSERT INTO motif(libelle) VALUES("vacances");
+INSERT INTO motif(libelle) VALUES("maladie");
+INSERT INTO motif(libelle) VALUES("motif_familial");
+INSERT INTO motif(libelle) VALUES("congé_parental");
+
+INSERT INTO service(nom) VALUES("administratif");
+INSERT INTO service(nom) VALUES("médiation_culturelle");
+INSERT INTO service(nom) VALUES("pret");
+
+
+INSERT INTO personnel(idpersonnel,nom,prenom,tel,mail) VALUES ("39230","Lacey","Barr","08 12 04 12 83","dolor.dapibus.gravida@ligula.co.uk"),("36220837999","Nora","Rodgers","08 86 55 00 41","in.dolor.Fusce@Sedauctorodio.ca"),("92241733699","Catherine","Stein","04 89 96 60 83","tortor@sociisnatoquepenatibus.edu"),("05346213999","Hanna","Acevedo","04 78 84 95 01","aliquam.adipiscing.lacus@tinciduntadipiscingMauris.com"),("66895862599","Fitzgerald","Kinney","04 63 42 29 47","eleifend.non@massaSuspendisse.co.uk"),("69512309799","Plato","Cohen","03 50 58 65 57","fringilla.cursus@vestibulum.com"),("14387667399","Noel","Rodriguez","09 89 48 09 19","a.mi@Pellentesqueut.co.uk"),("11338833899","Tyler","Harris","08 04 77 39 39","cursus.vestibulum.Mauris@quis.com"),("77377049099","Zephr","Daniels","06 98 50 78 04","orci.luctus@suscipit.co.uk"),("33601960799","Ray","White","01 88 03 31 56","augue@Etiamvestibulummassa.co.uk");
+INSERT INTO personnel(idpersonnel,nom,prenom,tel,mail) VALUES ("2329","Vaughan","Dillard","06 94 71 54 81","sagittis.Duis@necante.edu"),("75230177299","Lilah","Charles","02 35 67 82 89","arcu.ac@ullamcorper.ca"),("69878346799","Hanae","Baxter","01 17 66 69 86","arcu.et@cursusvestibulum.co.uk"),("87832580399","Debra","Hurley","04 03 80 00 40","condimentum.eget@molestiearcuSed.co.uk"),("32300228099","Lacey","Browning","06 44 74 46 57","tellus@arcuiaculis.edu"),("69403909099","Cain","Dennis","08 62 04 12 14","magna.malesuada.vel@nonsapienmolestie.co.uk"),("21873152999","Colleen","Burch","05 94 14 84 88","Maecenas.mi.felis@rhoncus.com"),("65218786099","Kevyn","Kaufman","03 96 40 42 32","mus.Aenean@estMauris.edu"),("93472643199","Florence","Hopkins","06 86 19 12 93","Nulla.aliquet@arcuCurabiturut.edu"),("99688171199","Tate","Hester","06 21 21 12 25","augue.eu.tellus@Suspendissealiquetmolestie.com");
+INSERT INTO personnel(idpersonnel,nom,prenom,tel,mail) VALUES ("1172","James","Burke","03 44 24 25 46","commodo@eu.net"),("52391055899","Charles","Moore","06 91 25 72 11","et.commodo@in.org"),("29350803499","Jena","Blanchard","07 53 19 42 54","hendrerit@auctor.edu"),("30304428599","Rhea","Richard","04 93 67 85 53","auctor.nunc.nulla@eueleifend.co.uk"),("91579007699","Aurora","Shannon","04 80 24 99 62","purus@ipsumcursus.org"),("56890221399","Mariko","Ratliff","07 25 64 34 65","placerat.orci@cubilia.ca"),("90561123999","Abel","Vance","05 46 42 96 19","Fusce.mollis@convallisest.net"),("70420312299","Sebastian","Hopkins","03 28 33 00 16","vitae@pede.co.uk"),("93533803899","Maris","Frost","01 56 92 66 23","leo@nostraper.org"),("09556261999","Nelle","Gonzales","01 07 40 77 02","vitae.risus@Donecdignissimmagna.com");
+INSERT INTO personnel(idpersonnel,nom,prenom,tel,mail) VALUES ("9842","Caleb","Acosta","06 16 12 11 02","tincidunt@commodo.edu"),("27381566199","Jade","Patel","02 32 10 41 18","lectus@Craspellentesque.ca"),("97260628099","Jakeem","Austin","05 56 26 87 23","Aliquam.tincidunt.nunc@nunc.com"),("36938121099","Joelle","King","09 33 17 19 17","imperdiet.non.vestibulum@malesuadaInteger.com"),("44782740599","Brynn","Garrett","02 15 16 24 66","Nunc.mauris.Morbi@sociosquad.edu"),("26605836399","Cairo","Cardenas","07 75 55 34 12","nisi@Nullaeuneque.ca"),("31974940399","Rhoda","Willis","02 43 70 29 51","at@fringillaporttitor.edu"),("06743216299","Jolene","Cooper","02 64 69 04 89","Cras.vehicula@nulla.co.uk"),("97441706299","Nayda","Jenkins","07 17 97 55 39","Suspendisse.tristique@Nullamvitaediam.co.uk"),("19253006999","Murphy","Buck","02 66 20 77 65","arcu.et@afelis.net");
+INSERT INTO personnel(idpersonnel,nom,prenom,tel,mail) VALUES ("9949","Stewart","Moody","05 83 64 02 05","consectetuer@enimSuspendissealiquet.com"),("27417098599","September","Shaffer","01 26 02 36 57","semper.auctor@turpisegestas.org"),("41549981699","Branden","Henson","01 97 28 96 26","quam.Pellentesque@odiosempercursus.org"),("61486160299","Karly","Santos","01 64 34 46 61","Phasellus.dapibus@senectuset.ca"),("48594252899","Shannon","Harrington","05 10 60 62 18","non@mieleifend.co.uk"),("02464945599","Carl","Delacruz","04 11 61 74 22","tempus@est.edu"),("85451897299","Jared","Thornton","07 35 13 07 07","dui.Suspendisse.ac@CurabiturdictumPhasellus.edu"),("20754956199","Kirestin","Hawkins","06 29 90 58 97","auctor.velit@laoreetposuereenim.net"),("70629283799","Todd","Howell","01 55 94 54 61","interdum.Curabitur.dictum@bibendumfermentummetus.co.uk"),("94622283799","Kirestin","Anderson","05 44 54 78 09","eros@Namligulaelit.com");
+INSERT INTO personnel(idpersonnel,nom,prenom,tel,mail) VALUES ("7265","Benjamin","Christensen","04 96 49 94 58","in.sodales@Curabitur.edu"),("55801456399","Cullen","Bishop","05 04 56 34 41","nisi.Aenean@auctor.edu"),("82408978499","Connor","Kane","06 52 45 20 05","Nam@sed.edu"),("48951448399","Dustin","Garrison","08 09 63 66 33","Mauris@hendrerit.edu"),("68754369299","Quin","Dejesus","07 69 05 57 97","nulla.Integer.urna@nascetur.co.uk"),("56876196499","Jordan","Blair","04 57 37 56 65","tempus.risus.Donec@eratinconsectetuer.net"),("64364720099","Brian","Barker","07 72 32 67 22","augue.malesuada.malesuada@vitae.co.uk"),("63842511999","Amal","Robles","06 96 36 85 50","at.iaculis.quis@augueeu.co.uk"),("28731236599","Clementine","Petersen","09 14 49 64 54","erat@ut.ca"),("27487364199","Renee","Rutledge","07 12 96 77 72","Mauris@eueratsemper.org");
+INSERT INTO personnel(idpersonnel,nom,prenom,tel,mail) VALUES ("4892","Baxter","Pacheco","04 82 38 20 76","interdum@consectetuer.net"),("52667795199","Zenaida","Hewitt","06 29 22 77 20","elit.dictum.eu@Integervitae.co.uk"),("92704388399","Kaden","Walls","09 57 07 12 45","Morbi.accumsan.laoreet@velquam.org"),("27336461899","Malik","Burgess","02 87 08 82 46","eu.euismod@erosnec.ca"),("28525421199","Dylan","Wood","07 10 93 28 36","facilisi@necluctusfelis.com"),("95779628299","Suki","Chang","08 15 88 87 72","lectus@consectetuereuismod.edu"),("72890103899","Jack","Manning","05 76 38 11 01","in.consequat.enim@faucibusutnulla.ca"),("11958096099","Brenna","Whitley","01 08 31 86 77","tincidunt.Donec@estmollis.org"),("55690672699","Deborah","Durham","02 04 60 48 80","tincidunt.nunc.ac@iaculislacus.org"),("07237305099","Ronan","Jackson","02 63 46 97 72","Nunc@Innecorci.com");
+INSERT INTO personnel(idpersonnel,nom,prenom,tel,mail) VALUES ("5193","Ingrid","Robles","05 63 90 24 83","mauris.erat.eget@Curabitursedtortor.org"),("65855852899","Hamish","Charles","03 39 59 33 11","Phasellus@auctor.edu"),("59696854099","Tallulah","French","02 90 95 61 67","lacinia.at.iaculis@velit.co.uk"),("46260165699","Aurelia","Holloway","09 95 55 00 19","Phasellus.vitae.mauris@mollislectus.edu"),("27428262399","James","Lloyd","03 11 89 27 33","quis.turpis.vitae@duiCumsociis.net"),("69468983499","Gail","Foley","06 57 05 45 50","sapien.cursus@Nullam.ca"),("61807040699","Amber","Boyd","02 45 37 10 09","molestie.tortor@enimmi.com"),("56355746899","Ryan","Dickerson","01 39 60 44 16","mauris.id.sapien@Integersem.edu"),("24850202199","Vernon","Brewer","06 00 05 43 31","Etiam@tincidunt.net"),("38417093499","Jonas","Buckner","08 11 44 98 25","nec.eleifend@volutpat.com");
+INSERT INTO personnel(idpersonnel,nom,prenom,tel,mail) VALUES ("0648","Camilla","Pope","07 04 04 87 12","interdum.Nunc@magnaSed.ca"),("70608628399","Noble","Crane","05 55 25 36 88","id.ante.dictum@acfacilisis.ca"),("16979772299","Cole","Morrison","09 16 45 75 79","lectus@non.com"),("28898862699","Lucas","Richmond","08 45 78 57 22","augue@adipiscinglacus.ca"),("84295811899","Kelsie","Bauer","03 72 28 28 23","Mauris.magna@leoelementumsem.com"),("30463808999","Oscar","Fry","09 69 41 98 73","Duis.a@mollisnec.org"),("61971856499","Yardley","Mccarty","02 21 93 11 84","tincidunt@luctuslobortisClass.net"),("99681501899","Sloane","Farley","04 47 74 44 54","mauris.elit@inconsectetueripsum.ca"),("73707788199","Emery","Rollins","08 52 48 53 18","bibendum.sed.est@egetmetus.com"),("05404821699","Shelley","Hale","07 65 07 58 26","elit@tellusSuspendisse.com");
+INSERT INTO personnel(idpersonnel,nom,prenom,tel,mail) VALUES ("49919","Maxine","Holman","03 50 13 78 89","ultricies.dignissim.lacus@egestashendrerit.edu"),("58484079799","Donna","Melendez","04 25 64 16 70","sem@hendreritconsectetuercursus.edu"),("61542732799","Elijah","Schultz","09 47 17 85 55","Nullam.ut@Sednuncest.net"),("53216309599","Marny","Lindsey","03 91 81 11 20","velit.eget@augue.com"),("11544640499","Illiana","Giles","04 07 92 71 19","luctus@tortordictum.org"),("03893518499","Ocean","Maldonado","05 42 73 21 87","imperdiet.erat@lorem.com"),("10351343199","Tucker","Castillo","09 35 60 34 75","a.odio.semper@sed.org"),("74584452199","Coby","Crawford","03 82 07 57 29","Praesent.interdum@Proin.edu"),("31669786699","Jael","Zamora","01 47 80 29 64","magna.tellus.faucibus@eros.ca"),("22419840999","Justin","Howard","06 74 70 57 57","Mauris.magna@acmattis.ca");
+
+SELECT * FROM personnel;
+SELECT * FROM absence;
